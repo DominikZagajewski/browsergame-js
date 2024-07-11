@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legio III</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="welcome-screen">
+      <h1>Witaj w Legionie!</h1>
+      <label for="player-name-input">Podaj swoje imię:</label>
+      <input type="text" id="player-name-input" required />
+      <button id="proceed-to-class-button">Dalej</button>
+    </div>
+
+    <div id="class-selection-screen" style="display: none">
+      <h1>Wybierz swoją klasę:</h1>
+      <button class="class-option" data-class="Wojownik">Wojownik</button>
+      <button class="class-option" data-class="Łucznik">Łucznik</button>
+      <button class="class-option" data-class="Mag">Mag</button>
+      <button id="start-game-button" style="display: none">Zaczynamy</button>
+    </div>
+
+    <header id="game-header" style="display: none">
+      <img src="assets/player-icon.png" alt="Ikona gracza" id="player-icon" />
+      <span id="player-name">Imię </span>
+      <span id="player-health">HP: 100/100 </span>
+      <span id="player-stamina">Wytrzymałość: 100/100 </span>
+      <span id="player-gold">Złoto: 0 </span>
+      <span id="player-level">Poziom: 1 </span>
+      <span id="player-strenght">Siła: 10 </span>
+      <span id="player-agility">Zręczność: 10 </span>
+      <span id="player-endurance">Wytrzymałość: 10 </span>
+      <span id="player-strategy">Strategia: 10 </span>
+    </header>
+    <div class="nav-container" style="display: none">
+      <nav>
+        <ul>
+          <li><a href="#" data-location="shop">Sklep</a></li>
+          <li><a href="#" data-location="tavern">Tawerna</a></li>
+          <li><a href="#" data-location="home">Dom</a></li>
+          <li><a href="#" data-location="temple">Świątynia</a></li>
+          <li><a href="#" data-location="forest">Las</a></li>
+          <li><a href="#" data-location="profile">Profil</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <div id="content">
+          <h1>Salve miles!</h1>
+          <p>Wybierz lokazliacje, do której chcesz się udać.</p>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+    <script src="tasks.js"></script>
+  </body>
+</html>
