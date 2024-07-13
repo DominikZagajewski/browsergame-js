@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legio III</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="welcome-screen">
+      <h1>Witaj w Legionie!</h1>
+      <label for="player-name-input">Podaj swoje imię:</label>
+      <input type="text" id="player-name-input" required />
+      <button id="proceed-to-class-button">Dalej</button>
+    </div>
+
+    <div id="class-selection-screen" style="display: none">
+      <h1>Wybierz swoją klasę:</h1>
+      <button class="class-option" data-class="Wojownik">Wojownik</button>
+      <button class="class-option" data-class="Łucznik">Łucznik</button>
+      <button class="class-option" data-class="Mag">Mag</button>
+      <button id="start-game-button" style="display: none">Zaczynamy</button>
+    </div>
+
+    <header id="game-header" style="display: none">
+      <img src="assets/player-icon.png" alt="Ikona gracza" id="player-icon" />
+      <span id="player-name"> </span>
+      <span id="player-health"></span>
+      <span id="player-stamina"> </span>
+      <span id="player-gold"> </span>
+      <span id="player-level"></span>
+      <span id="player-strenght"> </span>
+      <span id="player-agility"></span>
+      <span id="player-endurance"></span>
+      <span id="player-strategy"></span>
+      <span id="player-experience"></span>
+    </header>
+    <div class="nav-container" style="display: none">
+      <nav>
+        <ul>
+          <li><a href="#" data-location="shop">Sklep</a></li>
+          <li><a href="#" data-location="tavern">Tawerna</a></li>
+          <li><a href="#" data-location="home">Dom</a></li>
+          <li><a href="#" data-location="temple">Świątynia</a></li>
+          <li><a href="#" data-location="forest">Las</a></li>
+          <li><a href="#" data-location="profile">Profil</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <div id="content">
+          <h1>Salve miles!</h1>
+          <p>Wybierz lokalizację, do której chcesz się udać.</p>
+        </div>
+      </main>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/locations/forest.js"></script>
+    <script src="js/locations/home.js"></script>
+    <script src="js/locations/profile.js"></script>
+    <script src="js/locations/shop.js"></script>
+    <script src="js/locations/tavern.js"></script>
+    <script src="js/locations/temple.js"></script>
+    <script src="js/tasks.js"></script>
+  </body>
+</html>
