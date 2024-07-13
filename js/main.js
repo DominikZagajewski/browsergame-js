@@ -1,20 +1,18 @@
-//altualizacja statystyk, inicjacja gry, switch lokation
-
 document.addEventListener("DOMContentLoaded", () => {
-  const player = {
+  window.player = {
     name: "",
-    health: `100`,
+    health: 100,
     maxHealth: 100,
-    stamina: `100`,
+    stamina: 100,
     maxStamina: 100,
     gold: 0,
     level: 1,
-    strenght: 10,
+    strength: 10,
     agility: 10,
     endurance: 10,
     strategy: 10,
     class: "",
-    experience: `0`,
+    experience: 0,
     maxExperience: 100,
   };
 
@@ -23,43 +21,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const playerStamina = document.getElementById("player-stamina");
   const playerGold = document.getElementById("player-gold");
   const playerLevel = document.getElementById("player-level");
-  const playerStrenght = document.getElementById("player-strenght");
+  const playerStrength = document.getElementById("player-strength");
   const playerAgility = document.getElementById("player-agility");
   const playerEndurance = document.getElementById("player-endurance");
   const playerStrategy = document.getElementById("player-strategy");
   const playerExperience = document.getElementById("player-experience");
 
-  function updatePlayerStats() {
+  // ${Math.ceil(timeLeft)} sekund`;
+
+  window.updatePlayerStats = function () {
     playerName.textContent = player.name;
     playerHealth.textContent = `HP: ${player.health}/${player.maxHealth}`;
     playerStamina.textContent = `Wytrzymałość: ${player.stamina}/${player.maxStamina}`;
     playerGold.textContent = `Złoto: ${player.gold}`;
     playerLevel.textContent = `Poziom: ${player.level}`;
-    playerStrenght.textContent = `Siła: ${player.strenght}`;
+    playerStrength.textContent = `Siła: ${player.strength}`;
     playerAgility.textContent = `Zręczność: ${player.agility}`;
     playerEndurance.textContent = `Wytrzymałość: ${player.endurance}`;
     playerStrategy.textContent = `Strategia: ${player.strategy}`;
-    playerExperience.textContent = `Doświadczenie: ${player.experience}/${player.maxExperience}`;
-  }
+    playerExperience.textContent = `Doświadczenie: ${Math.ceil(
+      player.experience
+    )}/${Math.ceil(player.maxExperience)}`;
+  };
 
-  function increaseStat(stat, amunt) {
-    player[stat] += amunt;
-    if (stat === "expirience" && player.experience >= player.maxExperience) {
+  window.increaseStat = function (stat, amount) {
+    player[stat] += amount;
+    if (stat === "experience" && player.experience >= player.maxExperience) {
       player.experience = player.experience - player.maxExperience;
       player.level++;
-      player.maxExperience += 100; // obliczenie wymaganego expa na kolejny lvl
+      player.maxExperience /= 3 / 5; // obliczenie wymaganego expa na kolejny lvl (do zmiany na przyszłość)
     }
     updatePlayerStats();
-  }
+  };
 
-  function decreaseStat(stat, amount) {
+  window.decreaseStat = function (stat, amount) {
     if (player[stat] - amount >= 0) {
       player[stat] -= amount;
     } else {
       player[stat] = 0;
     }
     updatePlayerStats();
-  }
+  };
 
   document
     .getElementById("proceed-to-class-button")
