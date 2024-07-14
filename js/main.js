@@ -131,6 +131,9 @@ document.addEventListener("DOMContentLoaded", () => {
       case "profile":
         displayProfile(player);
         break;
+      case "arena":
+        displayArena();
+        break;
       default:
         content.innerHTML =
           "<h1>Witaj w Legionie!</h1><p>Wybierz lokalizację, do której chcesz się udać.</p>";

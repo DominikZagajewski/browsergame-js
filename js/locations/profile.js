@@ -7,5 +7,7 @@ function displayProfile(player) {
       <p>Wytrzymałość: ${player.endurance}</p>
       <p>Strategia: ${player.strategy}</p>
       <p>Klasa: ${player.class}</p>
-      <p>Doświadczenie: ${player.experience}/${player.maxExperience}`;
+      <p>Doświadczenie: ${Math.ceil(player.experience)}/${Math.ceil(
+    player.maxExperience
+  )}`;
 }
