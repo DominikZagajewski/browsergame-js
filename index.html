@@ -1,3 +1,5 @@
+<!-- Obecnie wykonuje punkty umiejętności do rozdania - main.js profile(?) i arena -->
+
 <!DOCTYPE html>
 <html lang="pl">
   <head>
@@ -23,7 +25,11 @@
     </div>
 
     <header id="game-header" style="display: none">
-      <img src="assets/player-icon.png" alt="Ikona gracza" id="player-icon" />
+      <img
+        src="assets/player-icon.png"
+        alt="Ikona gracza"
+        id="player-icon-header"
+      />
       <span id="player-name"> </span>
       <span id="player-health"></span>
       <span id="player-stamina"> </span>
@@ -52,6 +58,9 @@
         <div id="content">
           <h1>Salve miles!</h1>
           <p>Wybierz lokalizację, do której chcesz się udać.</p>
+
+          <div id="left-content"></div>
+          <div id="right-content"></div>
         </div>
         <button id="complete-task-button" style="display: none">
           Zakończ zadanie
