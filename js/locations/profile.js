@@ -1,31 +1,36 @@
-//wyszarzenie plusów jak nie ma punktów umiejętności,
-//najechanie myszką na plus pokaże koszt awansu (będzie to ze złotem plus)
-
 function displayProfile(player) {
   const content = document.getElementById("content");
-  content.innerHTML = `<img src="assets/player-icon.png" alt="Ikona gracza" id="player-icon" />
-  <h1>${player.name}</h1>
-  <p>Klasa: ${player.class}</p>
-  <p>Twoje staty:</p>
-      <p>Poziom: ${player.level}</p>
-      <p>Siła: ${player.strength} <button id="increase-strength" ${
+  content.innerHTML = `
+    <img src="assets/player-icon.png" alt="Ikona gracza" id="player-icon" />
+    <h1>${player.name}</h1>
+    <p>Klasa: ${player.class}</p>
+    <p>Twoje staty:</p>
+    <p>Poziom: ${player.level}</p>
+    <p>Siła: ${player.strength} <button id="increase-strength" ${
     player.experiencePoints === 0 ? "disabled" : ""
   }>+</button></p>
-      <p>Zręczność: ${
-        player.agility
-      }<button id="increase-agility">+</button></p>
-      <p>Wytrzymałość: ${
-        player.endurance
-      }<button id="increase-endurance">+</button></p>
-      <p>Strategia: ${
-        player.strategy
-      }<button id="increase-strategy">+</button></p>
-  <p>Punkty umiejętności: ${player.experiencePoints}</p>`;
+    <p>Zręczność: ${player.agility}<button id="increase-agility" ${
+    player.experiencePoints === 0 ? "disabled" : ""
+  }>+</button></p>
+    <p>Wytrzymałość: ${player.endurance}<button id="increase-endurance" ${
+    player.experiencePoints === 0 ? "disabled" : ""
+  }>+</button></p>
+    <p>Strategia: ${player.strategy}<button id="increase-strategy" ${
+    player.experiencePoints === 0 ? "disabled" : ""
+  }>+</button></p>
+    <p>Punkty umiejętności: ${player.experiencePoints}</p>
+    <div id="inventory" class="inventory-container"></div>
+  `;
 
-  //  <p>Doświadczenie: ${Math.ceil(player.experience)}/${Math.ceil(player.maxExperience)} narazie niepotrzebne, pokazanie doświadczenia
+  // Dodanie 30 kart do kontenera inwentarza
+  const inventoryContainer = document.getElementById("inventory");
+  for (let i = 0; i < 30; i++) {
+    const card = document.createElement("div");
+    card.className = "inventory-card";
+    inventoryContainer.appendChild(card);
+  }
 
-  // Zwiększanie statystkyk
-
+  // Zwiększanie statystyk
   document.getElementById("increase-strength").addEventListener("click", () => {
     if (player.experiencePoints > 0) {
       player.strength++;
@@ -68,5 +73,3 @@ function displayProfile(player) {
 displayProfile(player);
 
 updatePlayerStats();
-
-// moje
