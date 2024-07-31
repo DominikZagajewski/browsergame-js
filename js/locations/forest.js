@@ -73,7 +73,7 @@ function startTask(task) {
   }
 
   const content = document.getElementById("content");
-  decreaseStat("stamina", task.stamina); // Poprawione zmniejszenie staminy
+  decreaseStat("stamina", task.stamina);
 
   content.innerHTML = `
     <h1>Wykonywanie zadania: ${task.name}</h1>
@@ -89,7 +89,7 @@ function startTask(task) {
   const completeTaskButton = document.getElementById("complete-task-button");
   let timeLeft = task.duration / 1000;
 
-  completeTaskButton.style.display = "none"; // Ukryj przycisk na początku
+  completeTaskButton.style.display = "none";
 
   const interval = setInterval(() => {
     timeLeft--;
@@ -99,7 +99,6 @@ function startTask(task) {
     }%`;
     if (timeLeft <= 0) {
       clearInterval(interval);
-      // content.innerHTML = "<h1>Zadanie ukończone!</h1>";
       completeTask(task);
       completeTaskButton.style.display = "block";
     }
@@ -108,8 +107,6 @@ function startTask(task) {
   completeTaskButton.addEventListener("click", () => {
     clearInterval(interval);
     completeTask(task);
-
-    // content.innerHTML = "<h1>Zadanie ukończone!</h1>";
   });
 }
 

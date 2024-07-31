@@ -22,7 +22,6 @@ function displayProfile(player) {
     <div id="inventory" class="inventory-container"></div>
   `;
 
-  // Dodanie 30 kart do kontenera inwentarza
   const inventoryContainer = document.getElementById("inventory");
   for (let i = 0; i < 30; i++) {
     const card = document.createElement("div");
@@ -30,7 +29,6 @@ function displayProfile(player) {
     inventoryContainer.appendChild(card);
   }
 
-  // Zwiększanie statystyk
   document.getElementById("increase-strength").addEventListener("click", () => {
     if (player.experiencePoints > 0) {
       player.strength++;

@@ -1,10 +1,14 @@
 const item = [
   {
-    name: "bulla",
+    name: "Bulla",
     description: "",
   },
   {
-    name: "lunulla",
+    name: "Lunulla",
+    description: "",
+  },
+  {
+    name: "Gladius",
     description: "",
   },
 ];

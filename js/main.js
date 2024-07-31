@@ -1,3 +1,5 @@
+import { displayArena } from "./locations/arena.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   window.player = {
     name: "",
@@ -29,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const playerExperience = document.getElementById("player-experience");
   const playerExperiencePoints = document.getElementById(
     "player-experience-points"
-  ); // dokończ aktualizacje exp points + 10 za lvl
+  );
 
   window.updatePlayerStats = function () {
     playerName.textContent = player.name;
@@ -44,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     playerExperience.textContent = `Doświadczenie: ${Math.ceil(
       player.experience
     )}/${Math.ceil(player.maxExperience)}`;
-    // playerExperiencePoints.textContent = `Punkty umiejętności: ${player.experiencePoints}`; // niepotrzebne tutaj?
   };
 
   window.increaseStat = function (stat, amount) {
@@ -53,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       player.experience = player.experience - player.maxExperience;
       player.level++;
       player.experiencePoints += 10;
-      player.maxExperience /= 3 / 5; // obliczenie wymaganego expa na kolejny lvl (do zmiany na przyszłość)
+      player.maxExperience /= 3 / 5;
     }
     updatePlayerStats();
   };

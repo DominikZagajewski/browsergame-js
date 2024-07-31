@@ -1,5 +1,3 @@
-//planowane zmiany: system do expa (randomizacja), zmiana czasu zadan, dodanie golda, dodanie zmeczenia
-
 function getRandomTime() {
   return Math.floor(Math.random() * (10 - 5 + 1) + 1) * 1000;
 }
@@ -95,5 +93,3 @@ const tasks = [
     stamina: 50,
   },
 ];
-
-// pełne

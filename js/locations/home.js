@@ -1,6 +1,3 @@
-//możliwość ulepszania domu za złoto co sprawi zwiększenie max stamina
-// ulepszenie odpoczynku: wybierz ile czasu chcesz odpocząć, czym dłużej tym więcej uzyskasz staminy
-
 function displayHome() {
   const content = document.getElementById("content");
   content.innerHTML = `
